@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokeApiService } from 'src/app/services/poke-api.service';
+import Pokemon from 'src/app/types/Pokemon';
 
 @Component({
   selector: 'app-list',
@@ -8,12 +9,11 @@ import { PokeApiService } from 'src/app/services/poke-api.service';
 })
 export class ListComponent implements OnInit {
   filter: string = "";
-  selectedPokemon: {name: string, number: number} | null = null;
+  selectedPokemon: Pokemon | null = null;
 
-  get pokemons(): {name: string, number: number}[] {
-    return this.pokeApiService.pokemons.filter(pokemon => {
-      return pokemon.name.toLowerCase().includes(this.filter.toLowerCase())
-    });
+  get pokemons(): Pokemon[] {
+    const filteredPokemons: Pokemon[] = this.filterPokemons(this.pokeApiService.pokemons);
+    return filteredPokemons;
   }
 
   get pokemonSrc(): string | void {
@@ -26,10 +26,19 @@ export class ListComponent implements OnInit {
   constructor(private pokeApiService: PokeApiService) { }
 
   ngOnInit(): void {
+    this.pokeApiService.listAll();
   }
 
   selectPokemon(pokemon: any): void {
     this.selectedPokemon = pokemon;
+  }
+
+  private filterPokemons(pokemons: Pokemon[]): Pokemon[] {
+    const filteredPokemons: Pokemon[] = pokemons.filter(pokemon => {
+      return pokemon.name.toLowerCase().includes(this.filter.toLowerCase())
+    });
+
+    return filteredPokemons;
   }
 
 }
