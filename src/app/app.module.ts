@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ListComponent } from './views/list/list.component';
-import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -17,7 +16,7 @@ import { APP_BASE_HREF } from '@angular/common';
     FormsModule,
     HttpClientModule
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: '/pokedex'}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
