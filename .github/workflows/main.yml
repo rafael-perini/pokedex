@@ -26,10 +26,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs automated tests
-      - name: Test
-        run: npm run test
-
       # Runs a single command using the runners shell
       - name: Build and deploy
         uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
