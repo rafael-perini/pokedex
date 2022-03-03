@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "deployUrl": "/pokedex",
+            "deployUrl": "/pokedex/",
             "outputPath": "dist/pokedex",
             "index": "src/index.html",
             "main": "src/main.ts",
