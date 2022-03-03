@@ -95,6 +95,10 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
+            "watch": false,
+            "browsers": "ChromeHeadless",
+            "codeCoverage": true,
+            "sourceMap": false,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -104,9 +108,21 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "pokedex"
+  "defaultProject": "pokedex",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
