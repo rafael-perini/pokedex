@@ -1,4 +1,13 @@
-# Pokedex
+<p align="center">
+  <img src="https://rafael-perini.github.io/pokedex/assets/pokeball.svg" height="160px">
+</p>
+
+<p align="center">
+  <img src="https://github.com/rafael-perini/pokedex/actions/workflows/ci.yml/badge.svg?branch=main">
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg">
+</p>
+
+<h1 align="center">Pokedex</h1>
 
 A Pokedex template using Angular.
 
